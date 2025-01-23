@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户打卡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>用户打卡</h1>
+        <form id="checkinForm">
+            <label for="userid">User ID:</label>
+            <input type="text" id="userid" name="userid" required>
+
+            <label>验证方式:</label>
+            <label for="face">Face</label>
+            <input type="radio" id="face" name="checktype" value="fa">
+            <label for="fingerprint">Fingerprint</label>
+            <input type="radio" id="fingerprint" name="checktype" value="fp">
+
+            <label for="datetime">选择时间:</label>
+            <input type="datetime-local" id="datetime" name="datetime" required>
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
