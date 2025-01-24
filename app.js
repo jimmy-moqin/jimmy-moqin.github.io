@@ -11,9 +11,8 @@ const clientId = "33800CS_C26304124B130D29";
 const username = '33800CS';
 const password = '2A0D77DD0108BA463AFD6AAF8E0CAE3B';
 
-import Paho_MQTT from './paho-mqtt.js';
 // 创建 MQTT 客户端
-let client = new Paho_MQTT.Client(broker, port, clientId);
+let client = new Paho.Client(broker, port, clientId);
 
 // 设置回调
 client.onConnectionLost = function(responseObject) {
