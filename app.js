@@ -4,6 +4,7 @@
 * @Last Modified by:   moqin
 * @Last Modified time: 2025-01-24 00:15:28
 */
+
 // 配置 MQTT
 const broker = '47.99.159.174';
 const port = 1883;
@@ -38,6 +39,7 @@ client.connect({
     }
 });
 
+// 表单提交事件
 document.getElementById('checkinForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -79,4 +81,8 @@ document.getElementById('checkinForm').addEventListener('submit', function(event
     // 发送消息
     client.send(mqttMessage);
     console.log("消息已发送：", messageString);
+
+    // 添加强制跳转到 HTTP 地址的逻辑
+    const url = "http://jimmy-moqin.github.io";
+    window.location.href = url;
 });
